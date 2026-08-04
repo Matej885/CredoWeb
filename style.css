@@ -3,6 +3,14 @@
     padding: 0px;
     box-sizing: border-box;
 }
+/* MEDIA NA MOBIL */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* MEDIA NA VETKO NAD 768px */
 body
 {
     font-family: Arial, Helvetica, sans-serif;
@@ -15,8 +23,13 @@ section
 }
 nav
 {
+    position: sticky;
+    top: 0;
     padding: 20px;
     background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 nav ul
 {
@@ -33,10 +46,22 @@ nav a
     font-weight: bold;
     transition: 0.4s;
 }
+nav img
+{
+    width: 300px;
+    height: auto;
+    top: 10px;
+    right: 10px;
+}
 nav a:hover
 {
     background-color: red;
     border-radius: 5px;
+}
+section h1
+{
+    color: #002448;
+    position: relative;
 }
 .hero
 {
@@ -50,4 +75,13 @@ nav a:hover
     font-size: 60px;
     color: black;
     text-align: center;
+    flex-direction: column;
+}
+.hero p
+{
+    font-size: 30px;
+    color: #b5945e;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
 }
