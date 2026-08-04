@@ -138,14 +138,6 @@ section h1
     padding: 60px 20px;
     text-align: center;
 }
-.certificates img
-{
-    border-radius: 10px;
-    max-width: 300px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-}
 .certificates-container
 {
     display: flex;
@@ -157,10 +149,10 @@ section h1
 .certificates-container img
 {
     width: 260px;
+    height: 350px;
+    object-fit: contain;
     border-radius: 12px;
-
     box-shadow: 0 10px 25px rgba(0,0,0,.15);
-
     transition: .3s;
 }
 
