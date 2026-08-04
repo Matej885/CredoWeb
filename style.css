@@ -23,6 +23,7 @@ section
 }
 nav
 {
+    z-index: 1000;
     position: sticky;
     top: 0;
     padding: 20px;
@@ -84,4 +85,45 @@ section h1
     text-align: center;
     margin-top: 20px;
     font-weight: bold;
+}
+.references
+{
+    background-color: #002448;
+    color: rgb(0, 0, 0);
+    padding: 60px 20px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column; /* toto chýba */
+    align-items: center;
+}
+.firms {
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+    flex-wrap: wrap;
+
+    margin-top: 40px;
+}
+
+
+.logo-container img {
+    width: auto;
+    height: 132px;
+}
+.firms h2
+{
+    color: #000000;
+    font-size: 30px;
+    margin-bottom: 20px;
 }
