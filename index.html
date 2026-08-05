@@ -15,7 +15,7 @@
             <li><a href="!">SAMPLE2</a></li>
             <li><a href="!">SAMPLE3</a></li>
         </ul>
-        <img src="/images/Logo_CREDO-transparent.png" alt="CREDO LOGO" class="logo">
+        <img src="images/Logo_CREDO-transparent.png" alt="CREDO LOGO" class="logo">
     </nav>
         <section class = "hero">
             <h1>
@@ -25,34 +25,78 @@
                 Účtovíctvo a mzdové služby
             </p>
         </section>
- <section class = "services">
-        <h2>
-            Naše služby
-        </h2>
-        <div class="services-container">
-            <div class="card">
-                <img src="images/uctovnictvo.png">
-                <h2>1.</h2>
-                <h3>Účtovníctvo</h3>
-                <p>Poskytujeme komplexné účtovné služby pre malé a stredné podniky, vrátane spracovania účtovných dokladov,</p>
-                <p>vedenia účtovných kníh a prípravy finančných výkazov.</p>
-            </div>
-            
-            <div class="card">
-                <img src="images/mzdy.png">
-                <h2>2.</h2>
-                <h3>Mzdové služby</h3>
-                <p>Naša spoločnosť zabezpečuje kompletné mzdové služby, vrátane výpočtu miezd, spracovania odvodov a daňových priznaní, ako aj poradenstva v oblasti pracovného práva.</p>
-            </div>
+    <section class="services">
 
-            <div class="card">
-                <img src="images/poradenstvo.png"   >
-                <h2>3.</h2>
-                <h3>Poradenstvo</h3>
-                <p>Poskytujeme odborné poradenstvo v oblasti účtovníctva a daní, vrátane optimalizácie daňovej povinnosti a riešenia špecifických účtovných otázok.</p>
-            </div>
-        </div>
-    </section>
+<h2>Naše služby</h2>
+
+
+<div class="services-nav">
+
+<button 
+class="service-btn active blue"
+onclick="changeService('ucto', this)">
+Účtovníctvo
+</button>
+
+
+<button 
+class="service-btn red"
+onclick="changeService('mzdy', this)">
+Mzdové služby
+</button>
+
+
+<button 
+class="service-btn green"
+onclick="changeService('poradenstvo', this)">
+Poradenstvo
+</button>
+
+
+</div>
+
+
+
+<div class="service-info">
+
+
+<div class="service-logo">
+
+<img src="images/Logo_CREDO-HighRes.png" alt="CREDO LOGO">
+
+</div>
+
+
+
+<div class="service-text">
+
+
+<h3 id="service-title">
+Účtovníctvo
+</h3>
+
+
+<p id="service-text">
+Poskytujeme komplexné účtovné služby pre malé a stredné podniky.
+</p>
+
+
+<a id="service-link" 
+href="uctovnictvo.html" 
+class="more-btn">
+
+Dozvedieť sa viac
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</section>
     <section class="firms">
         
     <h2>
@@ -110,7 +154,69 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 CREDO</p>
-    </footer>
+    <p>&copy; 2026 CREDO</p>
+</footer>
+
+
+<script>
+
+function changeService(service, button)
+{
+let box = document.querySelector(".service-info");
+let logo = document.querySelector(".service-logo img");
+let title = document.getElementById("service-title");
+let text = document.getElementById("service-text");
+
+box.classList.remove("service-change");
+logo.classList.remove("logo-change");
+
+
+void box.offsetWidth;
+
+
+box.classList.add("service-change");
+logo.classList.add("logo-change");
+
+box.classList.add("service-change");
+    document.querySelectorAll(".service-btn")
+    .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+    
+
+    if(service == "ucto")
+    {
+        title.innerHTML = "Účtovníctvo";
+
+        text.innerHTML =
+        "Poskytujeme komplexné účtovné služby pre firmy.";
+    }
+
+
+    if(service == "mzdy")
+    {
+        title.innerHTML = "Mzdové služby";
+
+        text.innerHTML =
+        "Spracovanie miezd, odvodov a pracovnej agendy.";
+    }
+
+
+    if(service == "poradenstvo")
+    {
+        title.innerHTML = "Poradenstvo";
+
+        text.innerHTML =
+        "Pomáhame riešiť účtovné a daňové otázky.";
+    }
+}
+function showMore()
+{
+    let info = document.getElementById("more-info");
+
+    info.classList.toggle("open");
+}
+
+</script>
 </body>
 </html>
