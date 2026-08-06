@@ -3,6 +3,14 @@
     padding: 0px;
     box-sizing: border-box;
 }
+html
+{
+    scroll-behavior: smooth;
+}
+section
+{
+    scroll-margin-top: 120px;
+}
 /* MEDIA NA MOBIL */
 @media screen and (max-width: 768px) {
     nav ul {
@@ -77,7 +85,19 @@ section h1
     color: black;
     text-align: center;
     flex-direction: column;
+    animation: heroZoom 8s ease-in-out infinite alternate;
 }
+
+@keyframes heroZoom{
+    from{
+        background-size:100%;
+    }
+
+    to{
+        background-size:110%;
+    }
+}
+
 .hero p
 {
     font-size: 30px;
@@ -522,4 +542,274 @@ section h1
 {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px #000000;
+}
+
+.contact
+{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.contact h2
+{
+    font-size:45px;
+    color:#002448;
+    margin-bottom:50px;
+}
+
+.contact-container
+{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.contact-card
+{
+    width:360px;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    padding:35px;
+
+    transition:.3s;
+}
+
+.contact-card:hover
+{
+    transform: translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.contact-icon
+{
+    font-size:45px;
+
+    margin-bottom:20px;
+}
+
+.contact-value
+{
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:#002448;
+
+    margin-bottom:25px;
+
+    word-break:break-word;
+}
+
+.copy-btn
+{
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#b5945e;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.copy-btn:hover
+{
+    background:#8f713f;
+}
+
+.mail-btn
+{
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 15px 35px;
+
+    background-color: #002448;
+
+    color: white;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.mail-btn:hover
+{
+    background-color: #b5945e;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+.contact-card p
+{
+    font-size: 14px;
+    color: #000000;
+    margin-top: 10px;
+}
+
+#copy-message
+{
+    display:none;
+
+    margin-top:15px;
+
+    color:#008000;
+
+    font-weight:bold;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+}
+
+
+#copy-message.show
+{
+    display:block;
+
+    animation: messageIn 0.4s ease forwards;
+}
+
+
+
+#copy-message.hide
+{
+    display:block;
+
+    animation: messageOut 0.4s ease forwards;
+}
+
+
+
+@keyframes messageIn
+{
+    from
+    {
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to
+    {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+
+@keyframes messageOut
+{
+    from
+    {
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    to
+    {
+        opacity:0;
+        transform:translateY(-20px);
+    }
+}
+.copy-message
+{
+    height: 0;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    margin-top: 15px;
+
+    color:#008000;
+
+    font-weight:bold;
+
+    transition: 
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    height 0.4s ease;
+}
+
+
+
+.copy-message.show
+{
+    height:25px;
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+
+.copy-message.hide
+{
+    height:0;
+
+    opacity:0;
+
+    transform:translateY(-20px);
+}   
+.scroll-down
+{
+    position:absolute;
+
+    bottom:30px;
+    right:30px;
+
+    width:50px;
+
+    animation: bounce 2s infinite;
+
+    transition:0.4s;
+}
+
+
+.scroll-down img
+{
+    width:100%;
+}
+
+
+
+@keyframes bounce
+{
+    0%,100%
+    {
+        transform:translateY(0);
+    }
+
+    50%
+    {
+        transform:translateY(15px);
+    }
 }

@@ -12,8 +12,10 @@
 <body>
     <nav>
         <ul>
-            <li><a href="!">SAMPLE2</a></li>
-            <li><a href="!">SAMPLE3</a></li>
+            <li><a href="#">DOMOV</a></li>
+            <li><a href="#services">SLUŽBY</a></li>
+            <li><a href="#certificates">CERTIFIKÁTY</a></li>
+            <li><a href="#contact">KONTAKT</a></li>
         </ul>
         <img src="images/Logo_CREDO-transparent.png" alt="CREDO LOGO" class="logo">
     </nav>
@@ -24,9 +26,11 @@
         <p>
                 Účtovíctvo a mzdové služby
             </p>
+            <a href="#services" class="scroll-down">
+                <img src="images/arrow-down.png" alt="Scroll down">
+            </a>
         </section>
-    <section class="services">
-
+    <section class="services" id="services">
 <h2>Naše služby</h2>
 
 
@@ -123,7 +127,7 @@ Dozvedieť sa viac
     </div>
     </section>
     <p></p>
-    <section class = "certificates">
+    <section class = "certificates" id="certificates">
         <h2>
             Naše certifikáty
         </h2>
@@ -153,13 +157,162 @@ Dozvedieť sa viac
             </section>
     </main>
 
+<section class="contact" id="contact">
+
+    <h2>Kontaktujte nás</h2>
+
+    <div class="contact-container">
+
+
+        <!-- EMAIL -->
+
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                📧
+            </div>
+
+
+            <div class="contact-value">
+                z.sustekova@gmail.com
+            </div>
+
+
+            <button onclick="copyEmail()" class="copy-btn">
+                 Skopírovať e-mail
+            </button>
+
+
+            <div id="email-message" class="copy-message">
+                ✅ E-mail skopírovaný
+            </div>
+
+
+            <a 
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=z.sustekova@gmail.com"
+            target="_blank"
+            class="mail-btn">
+
+                ✉ Napísať email
+
+            </a>
+
+
+        </div>
+
+
+
+
+        <!-- TELEFÓN -->
+
+        <div class="contact-card">
+
+
+            <div class="contact-icon">
+                📞
+            </div>
+
+
+            <div class="contact-value">
+                +421 900 123 456
+            </div>
+
+
+            <button onclick="copyPhone()" class="copy-btn">
+                 Skopírovať telefón
+            </button>
+
+
+
+            <div id="phone-message" class="copy-message">
+                ✅ Telefón skopírovaný
+            </div>
+
+
+            <a 
+            href="tel:+421900123456"
+            class="mail-btn">
+
+                📞 Zavolať
+
+            </a>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
     <footer>
-    <p>&copy; 2026 CREDO</p>
-</footer>
+    <p>2026 CREDO</p>
+    </footer>
 
 
 <script>
 
+let arrow = document.querySelector(".scroll-down");
+
+
+window.addEventListener("scroll", () =>
+{
+    if(window.scrollY > 100)
+    {
+        arrow.style.opacity = "0";
+        arrow.style.pointerEvents = "none";
+    }
+    else
+    {
+        arrow.style.opacity = "1";
+        arrow.style.pointerEvents = "auto";
+    }
+});
+
+function showCopyMessage(id)
+{
+    let message = document.getElementById(id);
+
+    message.classList.remove("hide");
+
+    // reset animácie
+    void message.offsetWidth;
+
+    message.classList.add("show");
+
+
+    setTimeout(() =>
+    {
+        message.classList.remove("show");
+
+        message.classList.add("hide");
+
+    },2500);
+}
+
+
+
+function copyPhone()
+{
+    navigator.clipboard.writeText("+421 900 123 456")
+    .then(() =>
+    {
+        showCopyMessage("phone-message");
+    });
+}
+
+
+
+function copyEmail()
+{
+    navigator.clipboard.writeText("z.sustekova@gmail.com")
+    .then(() =>
+    {
+        showCopyMessage("email-message");
+    });
+}
 function changeService(service, button)
 {
 let box = document.querySelector(".service-info");
